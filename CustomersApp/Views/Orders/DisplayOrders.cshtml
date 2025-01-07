@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Order>
+@{
+    ViewData["Title"] = "DisplayOrders";
+}
+
+<h1>Orders</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.OrderId)</th>
+        <th>@Html.DisplayNameFor(m => m.OrderDate)</th>
+        <th>@Html.DisplayNameFor(m => m.Product)</th>
+        <th>@Html.DisplayNameFor(m => m.Amount)</th>
+        <th>@Html.DisplayNameFor(m => m.CustomerId)</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td> @item.OrderId</td>
+            <td> @item.OrderDate</td>
+            <td> @item.Product</td>
+            <td> @item.Amount</td>
+            <td> @item.CustomerId</td>
+         
+        </tr>
+    }
+</table>

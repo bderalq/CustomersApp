@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Customer>
+@{
+    ViewData["Title"] = "DisplayCustomers";
+}
+
+<h1>Customers</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.CustomerId)</th>
+        <th>@Html.DisplayNameFor(m => m.CustomerName)</th>
+        <th>@Html.DisplayNameFor(m => m.CustomerEmail)</th>
+        <th>@Html.DisplayNameFor(m => m.CustomerCity)</th>
+        <th>@Html.DisplayNameFor(m => m.Phone)</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td> @item.CustomerId</td>
+            <td> @item.CustomerName</td>
+            <td> @item.CustomerEmail</td>
+            <td> @item.CustomerCity</td>
+            <td> @item.Phone</td>
+            <td>
+                <a asp-action="Details"
+                   asp-controller="Customers"
+                   asp-route-id="@item.CustomerId"
+                   class=" btn btn-outline-primary"> MORE DETAILS </a>
+
+                <a asp-action="DisplayRelated"
+                   asp-controller="Orders"
+                   asp-route-id="@item.CustomerId"
+                   class=" btn btn-outline-primary"> Related Orders </a>
+            </td>
+        </tr>
+    }
+</table>

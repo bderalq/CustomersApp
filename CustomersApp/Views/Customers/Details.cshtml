@@ -1,0 +1,37 @@
+﻿@model Customer
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<table class="table table-bordered">
+	<tr>
+		<td>@Html.DisplayNameFor(m => m.CustomerId)</td>
+		<td>@Model.CustomerId</td>
+	</tr>
+	<tr>
+		<td>@Html.DisplayNameFor(m => m.CustomerName)</td>
+		<td>@Model.CustomerName</td>
+	</tr>
+	<tr>
+		<td>@Html.DisplayNameFor(m => m.CustomerEmail)</td>
+		<td>@Model.CustomerEmail  </td>
+	<tr>
+		<td>@Html.DisplayNameFor(m => m.Phone)</td>
+		<td>@Model.Phone  </td>
+	</tr>
+	<tr>
+		<td>@Html.DisplayNameFor(m => m.CustomerDate)</td>
+		<td>@Model.CustomerDate  </td>
+	</tr>
+	<tr>
+		<td>@Html.DisplayNameFor(m => m.CustomerIsActive)</td>
+		<td>@Model.CustomerIsActive  </td>
+	</tr>
+	<tr>
+		<td>@Html.DisplayNameFor(m => m.CustomerIsDeleted)</td>
+		<td>@Model.CustomerIsDeleted  </td>
+	</tr>
+	</tr>
+</table>
+
