@@ -1,0 +1,43 @@
+﻿@model Order
+@{
+    ViewData["Title"] = "CreateOrder";
+}
+
+<h1>CreateOrder</h1>
+
+
+<form asp-action="Create" method="post">
+	<table class=" table table-bordered">
+		<tr>
+			<td><label asp-for="OrderId"></label></td>
+			<td><input asp-for="OrderId" class=" form-control" /></td>
+		</tr>
+		<tr>
+
+			<td><label asp-for="OrderDate"></label></td>
+			<td><input asp-for="OrderDate" class=" form-control" /></td>
+		</tr>
+		<tr>
+
+			<td><label asp-for="Product"></label></td>
+			<td><input asp-for="Product" class=" form-control" /></td>
+		</tr>
+		<tr>
+
+			<td><label asp-for="Amount"></label></td>
+			<td><input asp-for="Amount" class=" form-control" /></td>
+		</tr>
+		<tr>
+
+			<td><label asp-for="CustomerId"></label></td>
+			<td><input asp-for="CustomerId" class=" form-control" /></td>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" class="btn btn-outline-success" value="save" />
+			</td>
+
+		</tr>
+
+	</table>
+</form>

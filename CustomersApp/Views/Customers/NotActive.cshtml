@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Customer>
+@{
+    ViewData["Title"] = "NotActive";
+}
+
+<h1>NotActive</h1>
+
+
+<table class="table table-bordered">
+
+    <tr>
+        <td align=center>@Html.DisplayNameFor(m => m.CustomerId)</td>
+        <td align=center>@Html.DisplayNameFor(m => m.CustomerName)</td>
+        <td align=center>@Html.DisplayNameFor(m => m.CustomerEmail)</td>
+        <td align=center>@Html.DisplayNameFor(m => m.CustomerCity)</td>
+        <td align=center>@Html.DisplayNameFor(m => m.CustomerIsActive)</td>
+        <td align=center>@Html.DisplayNameFor(m => m.Phone)</td>
+    </tr>
+    @foreach (var item in Model.Where(x=>x.CustomerIsActive == false))
+    {
+        <tr>
+            <td align=center> @item.CustomerId</td>
+            <td align=center> @item.CustomerName</td>
+            <td align=center> @item.CustomerEmail</td>
+            <td align=center> @item.CustomerCity</td>
+            <td align=center>@item.CustomerIsActive</td>
+            <td align=center> @item.Phone</td>
+        </tr>
+    }
+</table>

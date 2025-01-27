@@ -1,0 +1,56 @@
+﻿@model Customer
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form asp-action="CreateOrder" method="post">
+	<table class=" table table-bordered">
+		<tr>
+			<td><label asp-for="CustomerId"></label></td>
+			<td><input asp-for="CustomerId" class=" form-control" /></td>
+		</tr>
+		<tr>
+
+			<td><label asp-for="CustomerName"></label></td>
+			<td><input asp-for="CustomerName" class=" form-control" /></td>
+		</tr>
+		<tr>
+
+			<td><label asp-for="CustomerEmail"></label></td>
+			<td><input asp-for="CustomerEmail" class=" form-control" /></td>
+		</tr>
+		<tr>
+
+			<td><label asp-for="CustomerCity"></label></td>
+			<td><input asp-for="CustomerCity" class=" form-control" /></td>
+		</tr>
+		<tr>
+
+			<td><label asp-for="Phone"></label></td>
+			<td><input asp-for="Phone" class=" form-control" /></td>
+		</tr>
+		<tr>
+
+			<td><label asp-for="CustomerDate"></label></td>
+			<td><input asp-for="CustomerDate" class="form-check-input" /> </td>
+		</tr>
+		<tr>
+
+			<td><label asp-for="CustomerIsActive"></label></td>
+			<td><input asp-for="CustomerIsActive" class="form-check-input" /> check if customer is active or not active </td>
+		</tr>
+		<tr>
+
+			<td><label asp-for="CustomerIsDeleted"></label></td>
+			<td><input asp-for="CustomerIsDeleted" class="form-check-input" /> check if deleted or not deleted </td>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" class="btn btn-outline-success" value="save" />
+			</td>
+
+		</tr>
+	</table>
+</form>

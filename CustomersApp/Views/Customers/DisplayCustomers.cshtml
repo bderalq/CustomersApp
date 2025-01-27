@@ -3,25 +3,40 @@
     ViewData["Title"] = "DisplayCustomers";
 }
 
-<h1>Customers</h1>
+<h1>CUSTOMERS</h1>
+<a asp-action="Create"
+   asp-controller="Customers"
+   class=" btn btn-outline-primary"> ADD CUSTOMER </a>
 
+<a asp-action="CreateOrder"
+   asp-controller="Orders"
+   class=" btn btn-outline-primary"> ADD Order </a>
 <table class="table table-bordered">
     <tr>
-        <th>@Html.DisplayNameFor(m => m.CustomerId)</th>
-        <th>@Html.DisplayNameFor(m => m.CustomerName)</th>
-        <th>@Html.DisplayNameFor(m => m.CustomerEmail)</th>
-        <th>@Html.DisplayNameFor(m => m.CustomerCity)</th>
-        <th>@Html.DisplayNameFor(m => m.Phone)</th>
-        <th>Actions</th>
+        <td align = center>@Html.DisplayNameFor(m => m.CustomerId)</td>
+        <td align = center>@Html.DisplayNameFor(m => m.CustomerName)</td>
+        <td align = center>@Html.DisplayNameFor(m => m.CustomerEmail)</td>
+        <td align= center>@Html.DisplayNameFor(m => m.CustomerCity)</td>
+        <td align=center>@Html.DisplayNameFor(m => m.CustomerIsActive)</td>
+        <td align= center>@Html.DisplayNameFor(m => m.Phone)</td>
+        <td align= center>Actions</td>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
-            <td> @item.CustomerId</td>
-            <td> @item.CustomerName</td>
-            <td> @item.CustomerEmail</td>
-            <td> @item.CustomerCity</td>
-            <td> @item.Phone</td>
+            <td align = center> @item.CustomerId</td>
+            <td align= center> @item.CustomerName</td>
+            <td align= center> @item.CustomerEmail</td>
+            <td align= center> @item.CustomerCity</td>
+            <td align= center > 
+                @if (item.CustomerIsActive) {
+                    <span class="badge text-success" > Active </span>
+                } else {
+                <span class="badge text-danger"> Not Active </span>
+                }
+            
+             </td>
+            <td align= center> @item.Phone</td>
             <td>
                 <a asp-action="Details"
                    asp-controller="Customers"

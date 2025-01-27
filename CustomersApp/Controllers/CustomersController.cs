@@ -11,6 +11,12 @@ namespace CustomersApp.Controllers
              new Customer{CustomerId = 2, CustomerName="Ali", CustomerEmail = "Ali@gmail.com", CustomerCity = "Kuwait", Phone = 34567890, CustomerDate =DateTime.Now,
             CustomerIsDeleted = false, CustomerIsActive= true},
               new Customer{CustomerId = 3, CustomerName="Nora", CustomerEmail = "Nora@gmail.com", CustomerCity = "Dubai", Phone = 987654, CustomerDate =DateTime.Now,
+            CustomerIsDeleted = false, CustomerIsActive= false},
+              new Customer{CustomerId = 4, CustomerName="Ahmad", CustomerEmail = "Ahmad@gmail.com", CustomerCity = "Bahrain", Phone = 34262781, CustomerDate =DateTime.Now,
+            CustomerIsDeleted = false, CustomerIsActive= true},
+              new Customer{CustomerId = 5, CustomerName="Shaikha", CustomerEmail = "Shaikha@gmail.com", CustomerCity = "Kuwait", Phone = 987654, CustomerDate =DateTime.Now,
+            CustomerIsDeleted = false, CustomerIsActive= false},
+              new Customer{CustomerId = 6, CustomerName="Saleh", CustomerEmail = "Saleh@gmail.com", CustomerCity = "Basra", Phone = 987654, CustomerDate =DateTime.Now,
             CustomerIsDeleted = false, CustomerIsActive= true}
         };
 
@@ -19,7 +25,7 @@ namespace CustomersApp.Controllers
             return View(customerslist);
         }
 
-        public IActionResult Details (int? id)
+        public IActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -33,5 +39,28 @@ namespace CustomersApp.Controllers
             }
             return View(emp);
         }
+        [HttpGet]
+        public IActionResult Create ()
+        {
+            return View();  
+        }
+
+        [HttpPost]
+        public IActionResult Create (Customer customer)
+        {
+            customerslist.Add(customer);
+            return RedirectToAction("DisplayCustomers");
+        }
+
+        public IActionResult IsActive()
+        {
+            return View(customerslist); 
+        }
+        public IActionResult NotActive()
+        {
+            return View(customerslist);
+        }
+
+
     }
 }
